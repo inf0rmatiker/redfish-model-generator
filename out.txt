@@ -1,0 +1,1221 @@
+rfsf/Redfish/SoftwareInventory.v1_4_0.json:
+  Actions: model
+  MeasurementBlock: model
+  OemActions: model
+  SoftwareInventory: model
+rfsf/Redfish/CertificateCollection.json:
+  CertificateCollection: collection
+rfsf/Redfish/ExternalAccountProvider.v1_2_0.json:
+  AccountProviderTypes: enum
+  Actions: model
+  Authentication: model
+  AuthenticationTypes: enum
+  ExternalAccountProvider: model
+  LDAPSearchSettings: model
+  LDAPService: model
+  Links: model
+  OemActions: model
+  RoleMapping: model
+  TACACSplusPasswordExchangeProtocol: enum
+  TACACSplusService: model
+rfsf/Redfish/Job.v1_0_7.json:
+  Actions: model
+  Job: model
+  JobState: enum
+  OemActions: model
+  Payload: model
+rfsf/Redfish/TaskCollection.json:
+  TaskCollection: collection
+rfsf/Redfish/ThermalMetrics.v1_0_0.json:
+  Actions: model
+  OemActions: model
+  ResetMetrics: model
+  TemperatureSummary: model
+  ThermalMetrics: model
+rfsf/Redfish/Sensor.v1_3_0.json:
+  Actions: model
+  ImplementationType: enum
+  Links: model
+  OemActions: model
+  ReadingType: enum
+  ResetMetrics: model
+  Sensor: model
+  SensorArrayExcerpt: model
+  SensorCurrentExcerpt: model
+  SensorEnergykWhExcerpt: model
+  SensorExcerpt: model
+  SensorFanArrayExcerpt: model
+  SensorFanExcerpt: model
+  SensorPowerArrayExcerpt: model
+  SensorPowerExcerpt: model
+  SensorVoltageExcerpt: model
+  Threshold: model
+  ThresholdActivation: enum
+  Thresholds: model
+rfsf/Redfish/VLanNetworkInterface.v1_2_0.json:
+  Actions: model
+  OemActions: model
+  VLAN: model
+  VLANId: model
+  VLANPriority: model
+  VLanNetworkInterface: model
+rfsf/Redfish/FacilityCollection.json:
+  FacilityCollection: collection
+rfsf/Redfish/ProcessorMetrics.v1_2_1.json:
+  Actions: model
+  CStateResidency: model
+  CacheMetrics: model
+  CacheMetricsTotal: model
+  ClearCurrentPeriod: model
+  CoreMetrics: model
+  CurrentPeriod: model
+  LifeTime: model
+  OemActions: model
+  ProcessorMetrics: model
+rfsf/Redfish/JobCollection.json:
+  JobCollection: collection
+rfsf/Redfish/OutletCollection.json:
+  OutletCollection: collection
+rfsf/Redfish/Task.v1_5_1.json:
+  Actions: model
+  OemActions: model
+  Payload: model
+  Task: model
+  TaskState: enum
+rfsf/Redfish/TelemetryService.v1_3_1.json:
+  Actions: model
+  ClearMetricReports: model
+  CollectionFunction: enum
+  MetricValue: model
+  OemActions: model
+  ResetMetricReportDefinitionsToDefaults: model
+  ResetTriggersToDefaults: model
+  SubmitTestMetricReport: model
+  TelemetryService: model
+rfsf/Redfish/SessionCollection.json:
+  SessionCollection: collection
+rfsf/Redfish/Endpoint.v1_6_0.json:
+  Actions: model
+  ConnectedEntity: model
+  Endpoint: model
+  EntityRole: enum
+  EntityType: enum
+  GCID: model
+  GenZ: model
+  IPTransportDetails: model
+  Links: model
+  OemActions: model
+  PciId: model
+rfsf/Redfish/ComputerSystem.v1_9_6.json:
+  Actions: model
+  AddResourceBlock: model
+  Boot: model
+  BootOrderTypes: enum
+  BootSourceOverrideEnabled: enum
+  BootSourceOverrideMode: enum
+  ComputerSystem: model
+  HostedServices: model
+  HostingRole: enum
+  IndicatorLED: enum
+  InterfaceType: enum
+  InterfaceTypeSelection: enum
+  Links: model
+  MemoryMirroring: enum
+  MemorySummary: model
+  OemActions: model
+  PowerRestorePolicyTypes: enum
+  PowerState: enum
+  ProcessorSummary: model
+  RemoveResourceBlock: model
+  Reset: model
+  SetDefaultBootOrder: model
+  SystemType: enum
+  TrustedModules: model
+  WatchdogTimeoutActions: enum
+  WatchdogTimer: model
+  WatchdogWarningActions: enum
+rfsf/Redfish/StorageController.v1_2_0.json:
+  ANAAccessState: enum
+  ANACharacteristics: model
+  Actions: model
+  CacheSummary: model
+  Links: model
+  NVMeControllerAttributes: model
+  NVMeControllerProperties: model
+  NVMeControllerType: enum
+  NVMeSMARTCriticalWarnings: model
+  OemActions: model
+  Rates: model
+  StorageController: model
+rfsf/Redfish/ServiceRoot.v1_9_0.json:
+  DeepOperations: model
+  Expand: model
+  Links: model
+  ProtocolFeaturesSupported: model
+  ServiceRoot: model
+rfsf/Redfish/ResourceBlockCollection.json:
+  ResourceBlockCollection: collection
+rfsf/Redfish/ManagerAccount.v1_8_0.json:
+  Actions: model
+  Links: model
+  ManagerAccount: model
+  OemActions: model
+  SNMPAuthenticationProtocols: enum
+  SNMPEncryptionProtocols: enum
+  SNMPUserInfo: model
+rfsf/Redfish/PowerSupplyMetrics.v1_0_0.json:
+  Actions: model
+  CurrentSensors: model
+  OemActions: model
+  PowerSensors: model
+  PowerSupplyMetrics: model
+  ResetMetrics: model
+  VoltageSensors: model
+rfsf/Redfish/SimpleStorageCollection.json:
+  SimpleStorageCollection: collection
+rfsf/Redfish/TriggersCollection.json:
+  TriggersCollection: collection
+rfsf/Redfish/LogServiceCollection.json:
+  LogServiceCollection: collection
+rfsf/Redfish/Chassis.v1_9_6.json:
+  Actions: model
+  Chassis: model
+  ChassisType: enum
+  EnvironmentalClass: enum
+  IndicatorLED: enum
+  IntrusionSensor: enum
+  IntrusionSensorReArm: enum
+  Links: model
+  OemActions: model
+  PhysicalSecurity: model
+  PowerState: enum
+  Reset: model
+rfsf/Redfish/FabricCollection.json:
+  FabricCollection: collection
+rfsf/Redfish/AttributeRegistry.v1_3_6.json:
+  Actions: model
+  AttributeRegistry: model
+  AttributeType: enum
+  AttributeValue: model
+  Attributes: model
+  Dependencies: model
+  Dependency: model
+  DependencyType: enum
+  MapFrom: model
+  MapFromCondition: enum
+  MapFromProperty: enum
+  MapTerms: enum
+  MapToProperty: enum
+  Menus: model
+  OemActions: model
+  RegistryEntries: model
+  SupportedSystems: model
+rfsf/Redfish/AggregationSource.v1_1_0.json:
+  Actions: model
+  AggregationSource: model
+  Links: model
+  OemActions: model
+  SNMPAuthenticationProtocols: enum
+  SNMPEncryptionProtocols: enum
+  SNMPSettings: model
+rfsf/Redfish/Outlet.v1_1_1.json:
+  Actions: model
+  CurrentSensors: model
+  Links: model
+  OemActions: model
+  Outlet: model
+  PowerControl: model
+  ResetMetrics: model
+  VoltageSensors: model
+  VoltageType: enum
+rfsf/Redfish/SignatureCollection.json:
+  SignatureCollection: collection
+rfsf/Redfish/SecureBootDatabaseCollection.json:
+  SecureBootDatabaseCollection: collection
+rfsf/Redfish/EventDestinationCollection.json:
+  EventDestinationCollection: collection
+rfsf/Redfish/AddressPoolCollection.json:
+  AddressPoolCollection: collection
+rfsf/Redfish/Fabric.v1_2_2.json:
+  Actions: model
+  Fabric: model
+  Links: model
+  OemActions: model
+rfsf/Redfish/PowerDistributionCollection.json:
+  PowerDistributionCollection: collection
+rfsf/Redfish/SerialInterfaceCollection.json:
+  SerialInterfaceCollection: collection
+rfsf/Redfish/PowerDistribution.v1_0_3.json:
+  Actions: model
+  Links: model
+  OemActions: model
+  PowerDistribution: model
+  PowerEquipmentType: enum
+  TransferConfiguration: model
+  TransferControl: model
+  TransferCriteria: model
+  TransferSensitivityType: enum
+rfsf/Redfish/ConnectionCollection.json:
+  ConnectionCollection: collection
+rfsf/Redfish/Message.v1_1_2.json:
+  Message: model
+rfsf/Redfish/CompositionReservationCollection.json:
+  CompositionReservationCollection: collection
+rfsf/Redfish/Assembly.v1_3_0.json:
+  Actions: model
+  Assembly: model
+  AssemblyData: model
+  AssemblyDataActions: model
+  AssemblyDataOemActions: model
+  OemActions: model
+rfsf/Redfish/PCIeFunctionCollection.json:
+  PCIeFunctionCollection: collection
+rfsf/Redfish/BootOption.v1_0_4.json:
+  Actions: model
+  BootOption: model
+  OemActions: model
+rfsf/Redfish/TaskService.v1_2_0.json:
+  Actions: model
+  OemActions: model
+  OverWritePolicy: enum
+  TaskService: model
+rfsf/Redfish/CollectionCapabilities.v1_3_0.json:
+  Capability: model
+  CollectionCapabilities: collection
+  Links: model
+  UseCase: enum
+rfsf/Redfish/PhysicalContext.v1_3_0.json:
+  PhysicalContext: enum
+rfsf/Redfish/PowerSupplyCollection.json:
+  PowerSupplyCollection: collection
+rfsf/Redfish/Triggers.v1_1_4.json:
+  Actions: model
+  DirectionOfCrossingEnum: enum
+  DiscreteTrigger: model
+  DiscreteTriggerConditionEnum: enum
+  Links: model
+  MetricTypeEnum: enum
+  OemActions: model
+  Threshold: model
+  ThresholdActivation: enum
+  Thresholds: model
+  TriggerActionEnum: enum
+  Triggers: model
+  Wildcard: model
+rfsf/Redfish/Event.v1_6_1.json:
+  Actions: model
+  Event: model
+  EventRecord: model
+  EventRecordActions: model
+  EventRecordOemActions: model
+  OemActions: model
+rfsf/Redfish/SimpleStorage.v1_3_1.json:
+  Actions: model
+  Device: model
+  Links: model
+  OemActions: model
+  SimpleStorage: model
+rfsf/Redfish/PowerDomain.v1_0_1.json:
+  Actions: model
+  Links: model
+  OemActions: model
+  PowerDomain: model
+rfsf/Redfish/CertificateService.v1_0_4.json:
+  Actions: model
+  CertificateService: model
+  GenerateCSR: model
+  GenerateCSRResponse: model
+  OemActions: model
+  ReplaceCertificate: model
+rfsf/Redfish/MemoryChunks.v1_4_1.json:
+  Actions: model
+  AddressRangeType: enum
+  InterleaveSet: model
+  Links: model
+  MemoryChunks: model
+  OemActions: model
+rfsf/Redfish/ProcessorCollection.json:
+  ProcessorCollection: collection
+rfsf/Redfish/CircuitCollection.json:
+  CircuitCollection: collection
+rfsf/Redfish/OperatingConfig.v1_0_2.json:
+  Actions: model
+  BaseSpeedPrioritySettings: model
+  OemActions: model
+  OperatingConfig: model
+  TurboProfileDatapoint: model
+rfsf/Redfish/FanCollection.json:
+  FanCollection: collection
+rfsf/Redfish/Bios.v1_2_0.json:
+  Actions: model
+  Attributes: model
+  Bios: model
+  ChangePassword: model
+  Links: model
+  OemActions: model
+  ResetBios: model
+rfsf/Redfish/Manager.v1_9_3.json:
+  Actions: model
+  CommandConnectTypesSupported: enum
+  CommandShell: model
+  ForceFailover: model
+  GraphicalConnectTypesSupported: enum
+  GraphicalConsole: model
+  Links: model
+  Manager: model
+  ManagerService: model
+  ManagerType: enum
+  ModifyRedundancySet: model
+  OemActions: model
+  Reset: model
+  ResetToDefaults: model
+  ResetToDefaultsType: enum
+  SerialConnectTypesSupported: enum
+  SerialConsole: model
+rfsf/Redfish/FabricAdapter.v1_0_0.json:
+  Actions: model
+  FabricAdapter: model
+  GenZ: model
+  Links: model
+  OemActions: model
+rfsf/Redfish/AggregateCollection.json:
+  AggregateCollection: collection
+rfsf/Redfish/ManagerCollection.json:
+  ManagerCollection: collection
+rfsf/Redfish/NetworkPort.v1_4_1.json:
+  Actions: model
+  FlowControl: enum
+  LinkNetworkTechnology: enum
+  LinkStatus: enum
+  NetDevFuncMaxBWAlloc: model
+  NetDevFuncMinBWAlloc: model
+  NetworkPort: model
+  OemActions: model
+  PortConnectionType: enum
+  SupportedEthernetCapabilities: enum
+  SupportedLinkCapabilities: model
+rfsf/Redfish/Privileges.v1_0_5.json:
+rfsf/Redfish/ExternalAccountProviderCollection.json:
+  ExternalAccountProviderCollection: collection
+rfsf/Redfish/SessionService.v1_1_8.json:
+  Actions: model
+  OemActions: model
+  SessionService: model
+rfsf/Redfish/Power.v1_7_1.json:
+  Actions: model
+  InputRange: model
+  InputType: enum
+  LineInputVoltageType: enum
+  OemActions: model
+  Power: model
+  PowerControl: model
+  PowerControlActions: model
+  PowerControlOemActions: model
+  PowerLimit: model
+  PowerLimitException: enum
+  PowerMetric: model
+  PowerSupply: model
+  PowerSupplyActions: model
+  PowerSupplyOemActions: model
+  PowerSupplyReset: model
+  PowerSupplyType: enum
+  Voltage: model
+  VoltageActions: model
+  VoltageOemActions: model
+rfsf/Redfish/AccelerationFunction.v1_0_3.json:
+  AccelerationFunction: model
+  AccelerationFunctionType: enum
+  Actions: model
+  Links: model
+  OemActions: model
+rfsf/Redfish/MemoryChunksCollection.json:
+  MemoryChunksCollection: collection
+rfsf/Redfish/SecureBootDatabase.v1_0_1.json:
+  Actions: model
+  OemActions: model
+  ResetKeys: model
+  ResetKeysType: enum
+  SecureBootDatabase: model
+rfsf/Redfish/RouteEntryCollection.json:
+  RouteEntryCollection: collection
+rfsf/Redfish/MediaController.v1_2_0.json:
+  Actions: model
+  Links: model
+  MediaController: model
+  MediaControllerType: enum
+  OemActions: model
+  Reset: model
+rfsf/Redfish/PowerSupply.v1_1_0.json:
+  Actions: model
+  EfficiencyRating: model
+  InputRange: model
+  Links: model
+  OemActions: model
+  OutputRail: model
+  PowerSupply: model
+  PowerSupplyType: enum
+  Reset: model
+rfsf/Redfish/AggregationSourceCollection.json:
+  AggregationSourceCollection: collection
+rfsf/Redfish/Session.v1_3_0.json:
+  Actions: model
+  OemActions: model
+  Session: model
+  SessionTypes: enum
+rfsf/Redfish/PowerDomainCollection.json:
+  PowerDomainCollection: collection
+rfsf/Redfish/Switch.v1_6_0.json:
+  Actions: model
+  Links: model
+  OemActions: model
+  Reset: model
+  Switch: model
+rfsf/Redfish/MessageRegistryCollection.json:
+  MessageRegistryCollection: collection
+rfsf/Redfish/RoleCollection.json:
+  RoleCollection: collection
+rfsf/Redfish/NetworkDeviceFunction.v1_6_0.json:
+  Actions: model
+  AuthenticationMethod: enum
+  BootMode: enum
+  BootTargets: model
+  Ethernet: model
+  FibreChannel: model
+  IPAddressType: enum
+  InfiniBand: model
+  Links: model
+  NetworkDeviceFunction: model
+  NetworkDeviceTechnology: enum
+  OemActions: model
+  WWNSource: enum
+  iSCSIBoot: model
+rfsf/Redfish/Facility.v1_1_0.json:
+  Actions: model
+  Facility: model
+  FacilityType: enum
+  Links: model
+  OemActions: model
+rfsf/Redfish/Schedule.v1_2_2.json:
+  DayOfWeek: enum
+  MonthOfYear: enum
+  Schedule: model
+rfsf/Redfish/SensorCollection.json:
+  SensorCollection: collection
+rfsf/Redfish/ChassisCollection.json:
+  ChassisCollection: collection
+rfsf/Redfish/ActionInfo.v1_1_2.json:
+  ActionInfo: model
+  ParameterTypes: enum
+  Parameters: model
+rfsf/Redfish/SoftwareInventoryCollection.json:
+  SoftwareInventoryCollection: collection
+rfsf/Redfish/USBController.v1_0_0.json:
+  Actions: model
+  Links: model
+  OemActions: model
+  USBController: model
+rfsf/Redfish/SecureBoot.v1_1_0.json:
+  Actions: model
+  OemActions: model
+  ResetKeys: model
+  ResetKeysType: enum
+  SecureBoot: model
+  SecureBootCurrentBootType: enum
+  SecureBootModeType: enum
+rfsf/Redfish/HostInterfaceCollection.json:
+  HostInterfaceCollection: collection
+rfsf/Redfish/LogEntryCollection.json:
+  LogEntryCollection: collection
+rfsf/Redfish/ManagerNetworkProtocol.v1_7_0.json:
+  Actions: model
+  EngineId: model
+  HTTPSProtocol: model
+  ManagerNetworkProtocol: model
+  NTPProtocol: model
+  NotifyIPv6Scope: enum
+  OemActions: model
+  Protocol: model
+  SNMPAuthenticationProtocols: enum
+  SNMPCommunity: model
+  SNMPCommunityAccessMode: enum
+  SNMPEncryptionProtocols: enum
+  SNMPProtocol: model
+  SSDProtocol: model
+rfsf/Redfish/Protocol.json:
+  Protocol: enum
+rfsf/Redfish/JobService.v1_0_4.json:
+  Actions: model
+  JobService: model
+  JobServiceCapabilities: model
+  OemActions: model
+rfsf/Redfish/AccelerationFunctionCollection.json:
+  AccelerationFunctionCollection: collection
+rfsf/Redfish/EnvironmentMetrics.v1_0_0.json:
+  Actions: model
+  EnvironmentMetrics: model
+  OemActions: model
+  ResetMetrics: model
+rfsf/Redfish/PCIeFunction.v1_3_0.json:
+  Actions: model
+  DeviceClass: enum
+  FunctionType: enum
+  Links: model
+  OemActions: model
+  PCIeFunction: model
+rfsf/Redfish/HostInterface.v1_3_0.json:
+  Actions: model
+  AuthenticationMode: enum
+  CredentialBootstrapping: model
+  HostInterface: model
+  HostInterfaceType: enum
+  Links: model
+  OemActions: model
+rfsf/Redfish/OutletGroup.v1_0_1.json:
+  Actions: model
+  Links: model
+  OemActions: model
+  OutletGroup: model
+  PowerControl: model
+  ResetMetrics: model
+rfsf/Redfish/MessageRegistry.v1_4_2.json:
+  Actions: model
+  ClearingLogic: model
+  ClearingType: enum
+  Message: model
+  MessageProperty: model
+  MessageRegistry: model
+  OemActions: model
+  ParamType: enum
+rfsf/Redfish/JsonSchemaFileCollection.json:
+  JsonSchemaFileCollection: collection
+rfsf/Redfish/IPAddresses.v1_1_3.json:
+  AddressState: enum
+  IPv4Address: model
+  IPv4AddressOrigin: enum
+  IPv6Address: model
+  IPv6AddressOrigin: enum
+  IPv6GatewayStaticAddress: model
+  IPv6StaticAddress: model
+  PrefixLength: model
+  SubnetMask: model
+rfsf/Redfish/SerialInterface.v1_1_8.json:
+  Actions: model
+  BitRate: enum
+  ConnectorType: enum
+  DataBits: enum
+  FlowControl: enum
+  OemActions: model
+  Parity: enum
+  PinOut: enum
+  SerialInterface: model
+  SignalType: enum
+  StopBits: enum
+rfsf/Redfish/Signature.v1_0_2.json:
+  Actions: model
+  OemActions: model
+  Signature: model
+rfsf/Redfish/ResourceBlock.v1_4_0.json:
+  Actions: model
+  CompositionState: enum
+  CompositionStatus: model
+  Links: model
+  OemActions: model
+  PoolType: enum
+  ResourceBlock: model
+  ResourceBlockLimits: model
+  ResourceBlockType: enum
+rfsf/Redfish/Resource.v1_9_5.json:
+  ContactInfo: model
+  DurableNameFormat: enum
+  Identifier: model
+  Location: model
+  LocationType: enum
+  Orientation: enum
+  PartLocation: model
+  Placement: model
+  PostalAddress: model
+  RackUnits: enum
+  Reference: enum
+  ReferenceableMember: model
+  Resource: model
+  ResourceCollection: collection
+rfsf/Redfish/CompositionService.v1_2_0.json:
+  Actions: model
+  Compose: model
+  ComposeRequestFormat: enum
+  ComposeRequestType: enum
+  ComposeResponse: model
+  CompositionService: model
+  OemActions: model
+rfsf/Redfish/Thermal.v1_7_1.json:
+  Fan: model
+  FanActions: model
+  FanOemActions: model
+  ReadingUnits: enum
+  Temperature: model
+  TemperatureActions: model
+  TemperatureOemActions: model
+  Thermal: model
+  ThermalActions: model
+  ThermalOemActions: model
+rfsf/Redfish/NetworkDeviceFunctionCollection.json:
+  NetworkDeviceFunctionCollection: collection
+rfsf/Redfish/NetworkAdapter.v1_7_0.json:
+  Actions: model
+  ControllerCapabilities: model
+  ControllerLinks: model
+  Controllers: model
+  DataCenterBridging: model
+  NPIV: model
+  NetworkAdapter: model
+  NicPartitioning: model
+  OemActions: model
+  ResetSettingsToDefault: model
+  SRIOV: model
+  VirtualFunction: model
+  VirtualizationOffload: model
+rfsf/Redfish/MetricDefinition.v1_2_0.json:
+  Actions: model
+  Calculable: enum
+  CalculationAlgorithmEnum: enum
+  CalculationParamsType: model
+  ImplementationType: enum
+  MetricDataType: enum
+  MetricDefinition: model
+  MetricType: enum
+  OemActions: model
+  Wildcard: model
+rfsf/Redfish/NetworkAdapterCollection.json:
+  NetworkAdapterCollection: collection
+rfsf/Redfish/ManagerAccountCollection.json:
+  ManagerAccountCollection: collection
+rfsf/Redfish/AggregationService.v1_0_1.json:
+  Actions: model
+  AggregationService: model
+  OemActions: model
+  Reset: model
+  SetDefaultBootOrder: model
+rfsf/Redfish/EndpointGroupCollection.json:
+  EndpointGroupCollection: collection
+rfsf/Redfish/GraphicsControllerCollection.json:
+  GraphicsControllerCollection: collection
+rfsf/Redfish/ZoneCollection.json:
+  ZoneCollection: collection
+rfsf/Redfish/MetricReport.v1_4_2.json:
+  Actions: model
+  MetricReport: model
+  MetricValue: model
+  OemActions: model
+rfsf/Redfish/AccountService.v1_9_0.json:
+  AccountProviderTypes: enum
+  AccountService: model
+  Actions: model
+  Authentication: model
+  AuthenticationTypes: enum
+  ExternalAccountProvider: model
+  LDAPSearchSettings: model
+  LDAPService: model
+  LocalAccountAuth: enum
+  OemActions: model
+  RoleMapping: model
+  TACACSplusPasswordExchangeProtocol: enum
+  TACACSplusService: model
+rfsf/Redfish/MemoryCollection.json:
+  MemoryCollection: collection
+rfsf/Redfish/Circuit.v1_2_0.json:
+  Actions: model
+  BreakerControl: model
+  Circuit: model
+  CircuitType: enum
+  CurrentSensors: model
+  EnergySensors: model
+  Links: model
+  OemActions: model
+  PowerControl: model
+  PowerSensors: model
+  ResetMetrics: model
+  VoltageSensors: model
+  VoltageType: enum
+rfsf/Redfish/MessageRegistryFileCollection.json:
+  MessageRegistryFileCollection: collection
+rfsf/Redfish/MetricReportDefinition.v1_4_1.json:
+  Actions: model
+  CalculationAlgorithmEnum: enum
+  CollectionTimeScope: enum
+  Links: model
+  Metric: model
+  MetricReportDefinition: model
+  MetricReportDefinitionType: enum
+  OemActions: model
+  ReportActionsEnum: enum
+  ReportUpdatesEnum: enum
+  Wildcard: model
+rfsf/Redfish/PortMetrics.v1_1_0.json:
+  Actions: model
+  GenZ: model
+  Networking: model
+  OemActions: model
+  PortMetrics: model
+  SAS: model
+  Transceiver: model
+rfsf/Redfish/Drive.v1_9_4.json:
+  Actions: model
+  Drive: model
+  EncryptionAbility: enum
+  EncryptionStatus: enum
+  HotspareReplacementModeType: enum
+  HotspareType: enum
+  Links: model
+  MediaType: enum
+  OemActions: model
+  Operations: model
+  Reset: model
+  SecureErase: model
+  StatusIndicator: enum
+rfsf/Redfish/NetworkInterface.v1_2_1.json:
+  Actions: model
+  Links: model
+  NetworkInterface: model
+  OemActions: model
+rfsf/Redfish/MemoryDomain.v1_3_0.json:
+  Actions: model
+  Links: model
+  MemoryDomain: model
+  MemorySet: model
+  OemActions: model
+rfsf/Redfish/Redundancy.v1_4_0.json:
+  Actions: model
+  OemActions: model
+  Redundancy: model
+  RedundancyMode: enum
+  RedundancyType: enum
+  RedundantGroup: model
+rfsf/Redfish/PowerSubsystem.v1_0_0.json:
+  Actions: model
+  OemActions: model
+  PowerAllocation: model
+  PowerSubsystem: model
+rfsf/Redfish/VLanNetworkInterfaceCollection.json:
+  VLanNetworkInterfaceCollection: collection
+rfsf/Redfish/Port.v1_4_0.json:
+  Actions: model
+  ConfiguredNetworkLink: model
+  EthernetProperties: model
+  FiberConnectionType: enum
+  FibreChannelProperties: model
+  FlowControl: enum
+  FunctionMaxBandwidth: model
+  FunctionMinBandwidth: model
+  GenZ: model
+  IEEE802IdSubtype: enum
+  LLDPReceive: model
+  LLDPTransmit: model
+  LinkConfiguration: model
+  LinkNetworkTechnology: enum
+  LinkState: enum
+  LinkStatus: enum
+  Links: model
+  MediumType: enum
+  OemActions: model
+  Port: model
+  PortConnectionType: enum
+  PortMedium: enum
+  PortType: enum
+  Reset: model
+  SFP: model
+  SFPType: enum
+  SupportedEthernetCapabilities: enum
+rfsf/Redfish/EndpointGroup.v1_3_2.json:
+  Actions: model
+  EndpointGroup: model
+  GroupType: enum
+  Links: model
+  OemActions: model
+rfsf/Redfish/Storage.v1_9_2.json:
+  Actions: model
+  CacheSummary: model
+  Links: model
+  OemActions: model
+  Rates: model
+  SetEncryptionKey: model
+  Storage: model
+  StorageController: model
+  StorageControllerActions: model
+  StorageControllerLinks: model
+  StorageControllerOemActions: model
+rfsf/Redfish/PCIeDeviceCollection.json:
+  PCIeDeviceCollection: collection
+rfsf/Redfish/NetworkInterfaceCollection.json:
+  NetworkInterfaceCollection: collection
+rfsf/Redfish/EthernetInterfaceCollection.json:
+  EthernetInterfaceCollection: collection
+rfsf/Redfish/CertificateLocations.v1_0_2.json:
+  Actions: model
+  CertificateLocations: model
+  Links: model
+  OemActions: model
+rfsf/Redfish/ConnectionMethod.v1_0_0.json:
+  Actions: model
+  ConnectionMethod: model
+  ConnectionMethodType: enum
+  Links: model
+  OemActions: model
+rfsf/Redfish/PortCollection.json:
+  PortCollection: collection
+rfsf/Redfish/VirtualMedia.v1_4_0.json:
+  Actions: model
+  ConnectedVia: enum
+  EjectMedia: model
+  InsertMedia: model
+  MediaType: enum
+  OemActions: model
+  TransferMethod: enum
+  TransferProtocolType: enum
+  VirtualMedia: model
+rfsf/Redfish/EventDestination.v1_9_2.json:
+  Actions: model
+  DeliveryRetryPolicy: enum
+  EventDestination: model
+  EventDestinationProtocol: enum
+  HttpHeaderProperty: model
+  OemActions: model
+  ResumeSubscription: model
+  SNMPAuthenticationProtocols: enum
+  SNMPEncryptionProtocols: enum
+  SNMPSettings: model
+  SubscriptionType: enum
+  SyslogFacility: enum
+  SyslogFilter: model
+  SyslogSeverity: enum
+rfsf/Redfish/MetricReportDefinitionCollection.json:
+  MetricReportDefinitionCollection: collection
+rfsf/Redfish/Aggregate.v1_0_1.json:
+  Actions: model
+  AddElements: model
+  Aggregate: model
+  OemActions: model
+  RemoveElements: model
+  Reset: model
+  SetDefaultBootOrder: model
+rfsf/Redfish/Settings.v1_3_3.json:
+  ApplyTime: enum
+  MaintenanceWindow: model
+  OperationApplyTimeSupport: model
+  PreferredApplyTime: model
+  Settings: model
+rfsf/Redfish/Fan.v1_1_0.json:
+  Actions: model
+  Fan: model
+  OemActions: model
+rfsf/Redfish/ThermalSubsystem.v1_0_0.json:
+  Actions: model
+  OemActions: model
+  ThermalSubsystem: model
+rfsf/Redfish/EventService.v1_7_1.json:
+  Actions: model
+  EventService: model
+  OemActions: model
+  SMTP: model
+  SMTPAuthenticationMethods: enum
+  SMTPConnectionProtocol: enum
+  SSEFilterPropertiesSupported: model
+  SubmitTestEvent: model
+rfsf/Redfish/VCATEntryCollection.json:
+  VCATEntryCollection: collection
+rfsf/Redfish/MetricReportCollection.json:
+  MetricReportCollection: collection
+rfsf/Redfish/VCATEntry.v1_0_1.json:
+  Actions: model
+  OemActions: model
+  VCATEntry: model
+  VCATableEntry: model
+rfsf/Redfish/PrivilegeRegistry.v1_1_4.json:
+  Actions: model
+  Mapping: model
+  OemActions: model
+  OperationMap: model
+  OperationPrivilege: model
+  PrivilegeRegistry: model
+  Target_PrivilegeMap: model
+rfsf/Redfish/StorageControllerCollection.json:
+  StorageControllerCollection: collection
+rfsf/Redfish/RouteSetEntry.v1_0_1.json:
+  Actions: model
+  OemActions: model
+  RouteSetEntry: model
+rfsf/Redfish/LogEntry.v1_9_0.json:
+  Actions: model
+  EventSeverity: enum
+  Links: model
+  LogDiagnosticDataTypes: enum
+  LogEntry: model
+  LogEntryCode: enum
+  LogEntryType: enum
+  OemActions: model
+  SensorType: enum
+rfsf/Redfish/RouteSetEntryCollection.json:
+  RouteSetEntryCollection: collection
+rfsf/Redfish/GraphicsController.v1_0_0.json:
+  Actions: model
+  GraphicsController: model
+  Links: model
+  OemActions: model
+rfsf/Redfish/Processor.v1_9_2.json:
+  Actions: model
+  BaseSpeedPriorityState: enum
+  EthernetInterface: model
+  FPGA: model
+  FpgaReconfigurationSlot: model
+  FpgaType: enum
+  InstructionSet: enum
+  Links: model
+  OemActions: model
+  Processor: model
+  ProcessorArchitecture: enum
+  ProcessorId: model
+  ProcessorInterface: model
+  ProcessorMemory: model
+  ProcessorMemoryType: enum
+  ProcessorType: enum
+  Reset: model
+  SystemInterfaceType: enum
+  TurboState: enum
+rfsf/Redfish/NetworkDeviceFunctionMetrics.v1_0_0.json:
+  Actions: model
+  Ethernet: model
+  NetworkDeviceFunctionMetrics: model
+  OemActions: model
+rfsf/Redfish/Certificate.v1_3_0.json:
+  Actions: model
+  Certificate: model
+  Identifier: model
+  OemActions: model
+  Rekey: model
+  RekeyResponse: model
+  Renew: model
+  RenewResponse: model
+rfsf/Redfish/FabricAdapterCollection.json:
+  FabricAdapterCollection: collection
+rfsf/Redfish/AddressPool.v1_1_1.json:
+  ASNumberRange: model
+  Actions: model
+  AddressPool: model
+  BFDSingleHopOnly: model
+  BGPEvpn: model
+  BGPNeighbor: model
+  BGPRoute: model
+  CommonBGPProperties: model
+  DHCP: model
+  EBGP: model
+  ESINumberRange: model
+  EVINumberRange: model
+  Ethernet: model
+  GenZ: model
+  GracefulRestart: model
+  IPv4: model
+  IPv4AddressRange: model
+  Links: model
+  MaxPrefix: model
+  MultiplePaths: model
+  OemActions: model
+  RouteDistinguisherRange: model
+  RouteTargetRange: model
+  VLANIdentifierAddressRange: model
+rfsf/Redfish/StorageCollection.json:
+  StorageCollection: collection
+rfsf/Redfish/DriveCollection.json:
+  DriveCollection: collection
+rfsf/Redfish/NetworkPortCollection.json:
+  NetworkPortCollection: collection
+rfsf/Redfish/NetworkAdapterMetrics.v1_0_0.json:
+  Actions: model
+  NetworkAdapterMetrics: model
+  OemActions: model
+rfsf/Redfish/Manifest.v1_0_0.json:
+  Expand: enum
+  Manifest: model
+  Request: model
+  Response: model
+  Stanza: model
+  StanzaType: enum
+rfsf/Redfish/LogService.v1_2_0.json:
+  Actions: model
+  ClearLog: model
+  CollectDiagnosticData: model
+  LogDiagnosticDataTypes: enum
+  LogEntryTypes: enum
+  LogService: model
+  OemActions: model
+  OverWritePolicy: enum
+  SyslogFacility: enum
+  SyslogFilter: model
+  SyslogSeverity: enum
+rfsf/Redfish/PCIeSlots.v1_4_1.json:
+  Actions: model
+  OemActions: model
+  PCIeLinks: model
+  PCIeSlot: model
+  PCIeSlots: model
+  SlotTypes: enum
+rfsf/Redfish/VirtualMediaCollection.json:
+  VirtualMediaCollection: collection
+rfsf/Redfish/CompositionReservation.v1_0_0.json:
+  Actions: model
+  CompositionReservation: model
+  OemActions: model
+rfsf/Redfish/PowerDistributionMetrics.v1_1_0.json:
+  Actions: model
+  OemActions: model
+  PowerDistributionMetrics: model
+  ResetMetrics: model
+rfsf/Redfish/EndpointCollection.json:
+  EndpointCollection: collection
+rfsf/Redfish/BootOptionCollection.json:
+  BootOptionCollection: collection
+rfsf/Redfish/Zone.v1_6_1.json:
+  Actions: model
+  AddEndpoint: model
+  ExternalAccessibility: enum
+  Links: model
+  OemActions: model
+  RemoveEndpoint: model
+  Zone: model
+  ZoneType: enum
+rfsf/Redfish/PowerEquipment.v1_0_0.json:
+  Actions: model
+  Links: model
+  OemActions: model
+  PowerEquipment: model
+rfsf/Redfish/MessageRegistryFile.v1_1_3.json:
+  Actions: model
+  Location: model
+  MessageRegistryFile: model
+  OemActions: model
+rfsf/Redfish/ConnectionMethodCollection.json:
+  ConnectionMethodCollection: collection
+rfsf/Redfish/ComputerSystemCollection.json:
+  ComputerSystemCollection: collection
+rfsf/Redfish/MemoryMetrics.v1_4_1.json:
+  Actions: model
+  AlarmTrips: model
+  ClearCurrentPeriod: model
+  CurrentPeriod: model
+  HealthData: model
+  LifeTime: model
+  MemoryMetrics: model
+  OemActions: model
+rfsf/Redfish/Connection.v1_1_0.json:
+  AccessCapability: enum
+  AccessState: enum
+  Actions: model
+  Connection: model
+  ConnectionKey: model
+  ConnectionType: enum
+  GenZConnectionKey: model
+  Links: model
+  MemoryChunkInfo: model
+  OemActions: model
+  VolumeInfo: model
+rfsf/Redfish/EthernetInterface.v1_6_4.json:
+  Actions: model
+  DHCPFallback: enum
+  DHCPv4Configuration: model
+  DHCPv6Configuration: model
+  DHCPv6OperatingMode: enum
+  EthernetDeviceType: enum
+  EthernetInterface: model
+  IPv6AddressPolicyEntry: model
+  LinkStatus: enum
+  Links: model
+  MACAddress: model
+  OemActions: model
+  StatelessAddressAutoConfiguration: model
+rfsf/Redfish/SwitchCollection.json:
+  SwitchCollection: collection
+rfsf/Redfish/MediaControllerCollection.json:
+  MediaControllerCollection: collection
+rfsf/Redfish/Memory.v1_9_4.json:
+  Actions: model
+  BaseModuleType: enum
+  DisablePassphrase: model
+  ErrorCorrection: enum
+  Links: model
+  Memory: model
+  MemoryClassification: enum
+  MemoryDeviceType: enum
+  MemoryLocation: model
+  MemoryMedia: enum
+  MemoryType: enum
+  OemActions: model
+  OperatingMemoryModes: enum
+  OverwriteUnit: model
+  PowerManagementPolicy: model
+  RegionSet: model
+  Reset: model
+  SecureEraseUnit: model
+  SecurityCapabilities: model
+  SecurityStates: enum
+  SetPassphrase: model
+  UnlockUnit: model
+rfsf/Redfish/MetricDefinitionCollection.json:
+  MetricDefinitionCollection: collection
+rfsf/Redfish/USBControllerCollection.json:
+  USBControllerCollection: collection
+rfsf/Redfish/PCIeDevice.v1_7_0.json:
+  Actions: model
+  DeviceType: enum
+  Links: model
+  OemActions: model
+  PCIeDevice: model
+  PCIeInterface: model
+rfsf/Redfish/OperatingConfigCollection.json:
+  OperatingConfigCollection: collection
+rfsf/Redfish/JsonSchemaFile.v1_1_4.json:
+  Actions: model
+  JsonSchemaFile: model
+  Location: model
+  OemActions: model
+rfsf/Redfish/VolumeCollection.json:
+  VolumeCollection: collection
+rfsf/Redfish/Role.v1_3_1.json:
+  Actions: model
+  OemActions: model
+  Role: model
+rfsf/Redfish/Volume.v1_6_2.json:
+  Actions: model
+  AssignReplicaTarget: model
+  ChangeRAIDLayout: model
+  CheckConsistency: model
+  CreateReplicaTarget: model
+  ForceEnable: model
+  Initialize: model
+  Links: model
+  NVMeNamespaceProperties: model
+  NamespaceFeatures: model
+  OemActions: model
+  Operation: model
+  RemoveReplicaRelationship: model
+  ResumeReplication: model
+  ReverseReplicationRelationship: model
+  SplitReplication: model
+  SuspendReplication: model
+  Volume: model
+rfsf/Redfish/UpdateService.v1_9_0.json:
+  Actions: model
+  ApplyTime: enum
+  HttpPushUriApplyTime: model
+  HttpPushUriOptions: model
+  OemActions: model
+  SimpleUpdate: model
+  StartUpdate: model
+  TransferProtocolType: enum
+  UpdateParameters: model
+  UpdateService: model
+rfsf/Redfish/OutletGroupCollection.json:
+  OutletGroupCollection: collection
+rfsf/Redfish/MemoryDomainCollection.json:
+  MemoryDomainCollection: collection
+rfsf/Redfish/RouteEntry.v1_0_1.json:
+  Actions: model
+  OemActions: model
+  RouteEntry: model
