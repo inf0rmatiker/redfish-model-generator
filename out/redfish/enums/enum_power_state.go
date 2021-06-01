@@ -12,16 +12,16 @@ package openapi
 type PowerState string
 
 const (
-	// The system is powered on.
+	// The state is powered On.
 	PowerState_ON PowerState = "On"
 
-	// The system is powered off, although some components might continue to have AUX power such as management controller.
+	// The state is powered Off.
 	PowerState_OFF PowerState = "Off"
 
-	// A temporary state between off and on.  This temporary state can be very short.
+	// A temporary state between Off and On.
 	PowerState_POWERING_ON PowerState = "PoweringOn"
 
-	// A temporary state between on and off.  The power off action can take time while the OS is in the shutdown process.
+	// A temporary state between On and Off.
 	PowerState_POWERING_OFF PowerState = "PoweringOff"
 
 )

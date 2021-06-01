@@ -29,7 +29,9 @@ REDFISH_TYPES = {
     "Members@odata.nextLink": "map[string]interface{}",
     "Oem": "map[string]interface{}",
     "OemActions": "map[string]interface{}",
-    "Actions": "map[string]interface{}"
+    "Actions": "map[string]interface{}",
+    "ItemOrCollection": "map[string]interface{}",
+    "ResourceCollection": "map[string]interface{}"
 }
 
 # Mapping of JSON to Golang variable names
@@ -78,14 +80,14 @@ class Generator:
         os.mkdir(f"{self.output_dir}/models")
         os.mkdir(f"{self.output_dir}/enums")
 
-    # Main entrypoint of Generator
     def generate_models(self):
+        """Main entrypoint of Generator"""
         for filename in schemas.filenames(self.schema_dir):
             if filename[0].isupper():
                 self.parse_file(f"{self.schema_dir}/{filename}", filename)
 
-    # Parse a schema .json file, generating all models/enums found within as .go files
     def parse_file(self, file_path, filename):
+        """Parse a schema .json file, generating all models/enums found within as .go files"""
         try:
             f = open(file_path, "r")
             print(f"{file_path}:")
@@ -99,14 +101,21 @@ class Generator:
                 if "enum" in value:
                     print(f"  {key}: enum")
                     self.generate_enum(key, value)
+                elif key[len(key) - len("Collection"):len(key)] == "Collection":  # if key ends in "Collection"
+                    print(f"  {key}: collection")
+                    self.generate_model(key, value["anyOf"][1])
+                elif "properties" in value:
+                    print(f"  {key}: model")
+                    self.generate_model(key, value)
 
             f.close()
         except Exception as e:
-            print(f"\nCaught exception while reading file: {filename}")
+            print(f"\nCaught exception in parse_file while reading file: {filename}")
             print(e)
             exit(1)
 
     def generate_enum(self, enum_type, enum_object):
+        """Parse a schema enum object into a Golang enum"""
         enums = []  # Array of Enum objects
         enum_values = enum_object["enum"]
         enum_filename = "enum_" + self.converter.camel_to_snake(enum_type) + ".go"
@@ -151,7 +160,83 @@ class Generator:
                     f.write(f"\t{enum.const_var} {enum.enum_type} = \"{enum.value}\"\n")
             f.write(")\n")
 
-    def generate_model(self):
+    def record_types(self):
+        """Records the model types for things like Actions and user-defined objects as map[string]interface{}"""
+        for filename in schemas.filenames(self.schema_dir):
+            if filename[0].isupper():
+                file_path = f"{self.schema_dir}/{filename}"
+                try:
+                    f = open(file_path, "r")
+                    print(f"{file_path}:")
+
+                    # Returns JSON object as a dictionary
+                    data = json.load(f)
+
+                    # Iterate over every model key/value pair in schema definitions list
+                    definitions = data["definitions"]
+                    for key, value in definitions.items():
+                        if "enum" in value:
+                            continue
+                        elif "Collection" in key:
+                            continue
+                        elif "properties" in value and key not in REDFISH_TYPES:
+                            properties = value["properties"]
+                            if "parameters" in value or len(properties) == 0:
+                                REDFISH_TYPES[key] = "map[string]interface{}"
+
+                    f.close()
+                except Exception as e:
+                    print(f"\nCaught exception while reading file: {filename}")
+                    print(e)
+                    exit(1)
+
+    def generate_model(self, model_type, model_value):
+        """Parse a schema model object into a Golang struct"""
+        if model_type in REDFISH_TYPES:
+            print(f"  Predefined type. Skipping...")
+            return
+
+        try:
+            model_properties = model_value["properties"]
+            model_required = []
+            model_description = ""
+            model_filename = self.converter.camel_to_snake(model_type) + ".go"
+            model_dir = f"{self.output_dir}/models"
+
+            if "description" in model_value:
+                model_description = model_value["description"]
+
+            if "required" in model_value:
+                model_required = model_value["required"]
+
+            with open(f"{self.output_dir}/model_{model_filename}", "w") as f:
+                header = f"""/* -----------------------------------------------------------------
+* {model_filename} -
+*
+* {self.name} {model_type} resource defined as a Golang model
+*
+* © Copyright 2021 Hewlett Packard Enterprise Development LP
+*
+* ----------------------------------------------------------------- */\n\n"""
+                f.write(header)
+                f.write("package openapi\n\n")
+
+                if model_description != "":
+                    f.write(f"// {model_type} - {model_description}\n")
+                    f.write(f"// Modeled after {self.name} schema {model_type}\n")
+                    f.write("type %s struct {\n" % model_type)
+
+                for key, value in model_properties.items():
+                    self.parse_property(f, key, value)
+
+                f.write("}\n")
+
+                f.close()
+        except Exception as e:
+            print(f"Failed while processing {model_type}")
+            raise e
+
+    def parse_property(self, file, prop_key, prop_val):
         pass
 
     def generate_collection(self):

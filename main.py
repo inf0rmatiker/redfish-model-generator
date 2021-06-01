@@ -241,6 +241,8 @@ def main():
 
     rf_generator = g.RedfishGenerator()
     sf_generator = g.SwordfishGenerator()
+    rf_generator.record_types()
+    sf_generator.record_types()
     rf_generator.generate_models()
     sf_generator.generate_models()
 

@@ -12,16 +12,13 @@ package openapi
 type FlowControl string
 
 const (
-	// No IEEE 802.3x flow control is enabled on this port.
+	// No flow control imposed
 	FlowControl_NONE FlowControl = "None"
 
-	// IEEE 802.3x flow control may be initiated by this station.
-	FlowControl_TX FlowControl = "TX"
+	// XON/XOFF in-band flow control imposed
+	FlowControl_SOFTWARE FlowControl = "Software"
 
-	// IEEE 802.3x flow control may be initiated by the link partner.
-	FlowControl_RX FlowControl = "RX"
-
-	// IEEE 802.3x flow control may be initiated by this station or the link partner.
-	FlowControl_TX_RX FlowControl = "TX_RX"
+	// Out of band flow control imposed
+	FlowControl_HARDWARE FlowControl = "Hardware"
 
 )

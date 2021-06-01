@@ -21,4 +21,7 @@ const (
 	// The port is capable of connecting to a Fibre Channel network.
 	LinkNetworkTechnology_FIBRE_CHANNEL LinkNetworkTechnology = "FibreChannel"
 
+	// The port is capable of connecting to a Gen-Z fabric.
+	LinkNetworkTechnology_GEN_Z LinkNetworkTechnology = "GenZ"
+
 )

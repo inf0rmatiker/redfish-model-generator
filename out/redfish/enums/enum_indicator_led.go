@@ -12,16 +12,13 @@ package openapi
 type IndicatorLED string
 
 const (
-	// The state of the indicator LED cannot be determined.
-	IndicatorLED_UNKNOWN IndicatorLED = "Unknown"
-
-	// The indicator LED is lit.
+	// The Indicator LED is lit.
 	IndicatorLED_LIT IndicatorLED = "Lit"
 
-	// The indicator LED is blinking.
+	// The Indicator LED is blinking.
 	IndicatorLED_BLINKING IndicatorLED = "Blinking"
 
-	// The indicator LED is off.
+	// The Indicator LED is off.
 	IndicatorLED_OFF IndicatorLED = "Off"
 
 )

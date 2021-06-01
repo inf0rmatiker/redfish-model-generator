@@ -15,13 +15,13 @@ const (
 	// An opaque authentication token.
 	AuthenticationTypes_TOKEN AuthenticationTypes = "Token"
 
-	// A Kerberos keytab.
+	// A kerberos keytab.
 	AuthenticationTypes_KERBEROS_KEYTAB AuthenticationTypes = "KerberosKeytab"
 
-	// A user name and password combination.
+	// Username and password combination.
 	AuthenticationTypes_USERNAME_AND_PASSWORD AuthenticationTypes = "UsernameAndPassword"
 
-	// An OEM-specific authentication mechanism.
+	// An OEM specific authentication mechanism.
 	AuthenticationTypes_OEM AuthenticationTypes = "OEM"
 
 )
