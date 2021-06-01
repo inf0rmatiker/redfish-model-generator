@@ -373,10 +373,13 @@ def parse_file(filepath, filename):
 
 
 def main():
+    
     schemas.recreate_schemas_dir()
     schemas.download_redfish_schemas(DMTF_SCHEMA_ZIP_URL)
     schemas.download_swordfish_schemas(SNIA_SCHEMA_ZIP_URL)
-    schemas.prune_not_latest()
+    schemas.prune()
+
+
 
     schema_prefix = "rfsf/Redfish"
     files_to_skip = [

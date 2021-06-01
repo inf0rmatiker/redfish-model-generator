@@ -1,0 +1,62 @@
+{
+    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.json",
+    "$ref": "#/definitions/EndpointGroup",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "definitions": {
+        "AccessState": {
+            "description": "Describes the options for the access characteristics of an endpoint.",
+            "enum": [
+                "Optimized",
+                "NonOptimized",
+                "Standby",
+                "Unavailable",
+                "Transitioning"
+            ],
+            "enumDescriptions": {
+                "NonOptimized": "The endpoint(s) are in an Active/NonOptimized state.",
+                "Optimized": "The endpoint(s) are in an Active/Optimized state.",
+                "Standby": "The endpoint(s) are in a Standby state.",
+                "Transitioning": "The endpoint(s) are transitioning to a new AccessState.",
+                "Unavailable": "The endpoint(s) are unavailable."
+            },
+            "enumLongDescriptions": {
+                "NonOptimized": "In the context of this enumeration literal, each endpoint shall be in an Active/NonOptimized state.",
+                "Optimized": "In the context of this enumeration literal, each endpoint shall be in an Active/Optimized state.",
+                "Standby": "In the context of this enumeration literal, each endpoint shall be in a Standby state.",
+                "Transitioning": "In the context of this enumeration literal, at least one endpoint shall be transitioning to a new AccessState.",
+                "Unavailable": "In the context of this enumeration literal, each endpoint shall be in an unavailable state."
+            },
+            "longDescription": "Access to all associated resources through all aggregated endpoints shall share this access state.",
+            "type": "string"
+        },
+        "EndpointGroup": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_0_2.json#/definitions/EndpointGroup"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_1_3.json#/definitions/EndpointGroup"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_2_1.json#/definitions/EndpointGroup"
+                }
+            ],
+            "deletable": true,
+            "description": "A group of endpoints that are managed as a unit.",
+            "insertable": false,
+            "longDescription": "A group of endpoints that shall be managed as a unit.",
+            "updatable": true,
+            "uris": [
+                "/redfish/v1/Storage/{StorageId}/EndpointGroups/{EndpointGroupId}",
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/EndpointGroups/{EndpointGroupId}",
+                "/redfish/v1/StorageServices/{StorageServiceId}/EndpointGroups/{EndpointGroupId}"
+            ]
+        }
+    },
+    "owningEntity": "SNIA",
+    "title": "#EndpointGroup.EndpointGroup"
+}

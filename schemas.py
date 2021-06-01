@@ -90,23 +90,30 @@ def download_swordfish_schemas(zip_url):
 
 
 # Deletes all but the latest versions of the schemas
-def prune_not_latest():
+def prune():
     resources = {}
+    versioned_resources = {}
     redfish_filenames = filenames("schemas/redfish")
     swordfish_filenames = filenames("schemas/swordfish")
 
     for filename in redfish_filenames:
         parts = filename.split(".")
-        resources[parts[0]] = ".".join(parts)  # Replace dictionary entry with latest version
+        if len(parts) == 2:
+            resources[parts[0]] = ".".join(parts)
+        else:
+            versioned_resources[parts[0]] = ".".join(parts)
 
     for filename in swordfish_filenames:
         parts = filename.split(".")
-        resources[parts[0]] = ".".join(parts)  # Replace dictionary entry with latest version
+        if len(parts) == 2:
+            resources[parts[0]] = ".".join(parts)
+        else:
+            versioned_resources[parts[0]] = ".".join(parts)
 
     for filename in redfish_filenames:
-        if filename not in resources.values():
+        if filename not in resources.values() and filename not in versioned_resources.values():
             os.remove(f"schemas/redfish/{filename}")
 
     for filename in swordfish_filenames:
-        if filename not in resources.values():
+        if filename not in resources.values() and filename not in versioned_resources.values():
             os.remove(f"schemas/swordfish/{filename}")
