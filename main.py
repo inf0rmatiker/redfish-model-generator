@@ -6,40 +6,9 @@ import generator as g
 DMTF_SCHEMA_ZIP_URL = "https://www.dmtf.org/sites/default/files/standards/documents/DSP8010_2021.1.zip"
 SNIA_SCHEMA_ZIP_URL = "https://www.snia.org/sites/default/files/swordfish/draft/v1.2.2/zip/Swordfish_v1.2.2_Schema.zip"
 
-# Golang types for Redfish
-redfish_types = {
-    "@odata.context": "string",
-    "@odata.etag": "string",
-    "@odata.id": "string",
-    "@odata.type": "string",
-    "Id": "string",
-    "Name": "string",
-    "Description": "string",
-    "Members": "[]map[string]interface{}",
-    "Members@odata.count": "int",
-    "Members@odata.nextLink": "map[string]interface{}",
-    "Oem": "map[string]interface{}",
-    "OemActions": "map[string]interface{}",
-    "Actions": "map[string]interface{}"
-}
 
-redfish_vars = {
-    "@odata.context": "OdataContext",
-    "@odata.etag": "OdataEtag",
-    "@odata.id": "OdataId",
-    "@odata.type": "OdataType",
-    "Members@odata.count": "MembersOdataCount",
-    "Members@odata.nextLink": "MembersOdataNextLink",
-}
 
-redfish_descriptions = {
-    "Oem": "The OEM extension property.",
-    "OemObject": "The base type for an OEM extension.",
-    "Members": "The members of this collection.",
-    "Id": "The identifier that uniquely identifies the resource within the collection of similar resources.",
-    "Name": "The name of the resource or array member.",
-    "Description": "The description of this resource.  Used for commonality in the schema definitions."
-}
+
 
 enums_output_dirs = "/home/inf0rmatiker/go/src/test/models"  # "out/enums"
 models_output_dirs = "/home/inf0rmatiker/go/src/test/models"  # "out/models"

@@ -15,6 +15,43 @@ PRIMITIVES = {
     "boolean": "bool"
 }
 
+# Golang types for Redfish-specific types
+REDFISH_TYPES = {
+    "@odata.context": "string",
+    "@odata.etag": "string",
+    "@odata.id": "string",
+    "@odata.type": "string",
+    "Id": "string",
+    "Name": "string",
+    "Description": "string",
+    "Members": "[]map[string]interface{}",
+    "Members@odata.count": "int",
+    "Members@odata.nextLink": "map[string]interface{}",
+    "Oem": "map[string]interface{}",
+    "OemActions": "map[string]interface{}",
+    "Actions": "map[string]interface{}"
+}
+
+# Mapping of JSON to Golang variable names
+REDFISH_VARS = {
+    "@odata.context": "OdataContext",
+    "@odata.etag": "OdataEtag",
+    "@odata.id": "OdataId",
+    "@odata.type": "OdataType",
+    "Members@odata.count": "MembersOdataCount",
+    "Members@odata.nextLink": "MembersOdataNextLink",
+}
+
+# Mapping of Redfish descriptions
+REDFISH_DESCRIPTIONS = {
+    "Oem": "The OEM extension property.",
+    "OemObject": "The base type for an OEM extension.",
+    "Members": "The members of this collection.",
+    "Id": "The identifier that uniquely identifies the resource within the collection of similar resources.",
+    "Name": "The name of the resource or array member.",
+    "Description": "The description of this resource.  Used for commonality in the schema definitions."
+}
+
 
 def schema_name(filename):
     return filename.split(".")[0]
