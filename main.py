@@ -2,6 +2,11 @@ import json
 import os
 from os import walk
 import converter as c
+import schemas
+
+# Update these with latest .zip urls as needed
+DMTF_SCHEMA_ZIP_URL = "https://www.dmtf.org/sites/default/files/standards/documents/DSP8010_2021.1.zip"
+SNIA_SCHEMA_ZIP_URL = "https://www.snia.org/sites/default/files/swordfish/draft/v1.2.2/zip/Swordfish_v1.2.2_Schema.zip"
 
 # Golang types for JSON
 json_primitives = {
@@ -368,6 +373,11 @@ def parse_file(filepath, filename):
 
 
 def main():
+    schemas.recreate_schemas_dir()
+    schemas.download_redfish_schemas(DMTF_SCHEMA_ZIP_URL)
+    schemas.download_swordfish_schemas(SNIA_SCHEMA_ZIP_URL)
+    schemas.prune_not_latest()
+
     schema_prefix = "rfsf/Redfish"
     files_to_skip = [
         "odata.v4_0_5.json",
@@ -378,14 +388,16 @@ def main():
         "redfish-payload-annotations.v1_1_1.json"
     ]
 
-    f = []
-    for (_, _, filenames) in walk(schema_prefix):
-        f.extend(filenames)
-        break
+    # f = []
+    # for (_, _, filenames) in walk(schema_prefix):
+    #     f.extend(filenames)
+    #     break
+    #
+    # for filename in f:
+    #     if filename not in files_to_skip:
+    #         parse_file(f"{schema_prefix}/{filename}", filename)
 
-    for filename in f:
-        if filename not in files_to_skip:
-            parse_file(f"{schema_prefix}/{filename}", filename)
+
 
 
 if __name__ == '__main__':
