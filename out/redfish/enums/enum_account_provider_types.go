@@ -12,16 +12,16 @@ package openapi
 type AccountProviderTypes string
 
 const (
-	// An external Redfish Service.
+	// An external Redfish service.
 	AccountProviderTypes_REDFISH_SERVICE AccountProviderTypes = "RedfishService"
 
-	// An external Active Directory Service.
+	// An external Active Directory service.
 	AccountProviderTypes_ACTIVE_DIRECTORY_SERVICE AccountProviderTypes = "ActiveDirectoryService"
 
-	// A generic external LDAP Service.
+	// A generic external LDAP service.
 	AccountProviderTypes_LDAP_SERVICE AccountProviderTypes = "LDAPService"
 
-	// An OEM specific external authentication or directory service.
+	// An OEM-specific external authentication or directory service.
 	AccountProviderTypes_OEM AccountProviderTypes = "OEM"
 
 )

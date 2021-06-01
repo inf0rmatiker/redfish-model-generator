@@ -24,14 +24,16 @@ REDFISH_TYPES = {
     "Id": "string",
     "Name": "string",
     "Description": "string",
-    "Members": "[]map[string]interface{}",
+    "Members": "map[string]interface{}",
     "Members@odata.count": "int",
     "Members@odata.nextLink": "map[string]interface{}",
     "Oem": "map[string]interface{}",
     "OemActions": "map[string]interface{}",
     "Actions": "map[string]interface{}",
     "ItemOrCollection": "map[string]interface{}",
-    "ResourceCollection": "map[string]interface{}"
+    "ResourceCollection": "map[string]interface{}",
+    "count": "int",
+    "nextLink": "map[string]interface{}"
 }
 
 # Mapping of JSON to Golang variable names
@@ -102,8 +104,12 @@ class Generator:
                     print(f"  {key}: enum")
                     self.generate_enum(key, value)
                 elif key[len(key) - len("Collection"):len(key)] == "Collection":  # if key ends in "Collection"
-                    print(f"  {key}: collection")
-                    self.generate_model(key, value["anyOf"][1])
+                    if "anyOf" not in value and "properties in value":
+                        print(f"  {key}: model")
+                        self.generate_model(key, value)
+                    else:
+                        print(f"  {key}: collection")
+                        self.generate_model(key, value["anyOf"][1])
                 elif "properties" in value:
                     print(f"  {key}: model")
                     self.generate_model(key, value)
@@ -209,7 +215,7 @@ class Generator:
             if "required" in model_value:
                 model_required = model_value["required"]
 
-            with open(f"{self.output_dir}/model_{model_filename}", "w") as f:
+            with open(f"{model_dir}/model_{model_filename}", "w") as f:
                 header = f"""/* -----------------------------------------------------------------
 * {model_filename} -
 *
@@ -227,7 +233,7 @@ class Generator:
                     f.write("type %s struct {\n" % model_type)
 
                 for key, value in model_properties.items():
-                    self.parse_property(f, key, value)
+                    self.parse_property(f, key, value, key in model_required)
 
                 f.write("}\n")
 
@@ -236,11 +242,118 @@ class Generator:
             print(f"Failed while processing {model_type}")
             raise e
 
-    def parse_property(self, file, prop_key, prop_val):
-        pass
+    def parse_property(self, f, prop_key, prop_val, is_required):
+        try:
+            description = ""
+            if prop_key in REDFISH_DESCRIPTIONS:
+                description = REDFISH_DESCRIPTIONS[prop_key]
+            elif "description" in prop_val:
+                description = prop_val["description"]
 
-    def generate_collection(self):
-        pass
+            if description != "":
+                f.write(f"\t// {description}\n")
+
+            variable = prop_key
+            if prop_key in REDFISH_VARS:
+                variable = REDFISH_VARS[prop_key]
+
+            # Some variables have @odata.count on them
+            if "@odata.count" in variable:
+                variable = variable.split("@")[0] + "OdataCount"
+
+            # "type" comes in several forms:
+            # 1. "type": "<primitive>" where type is a primitive
+            # 2. "type": "object" where type is the object just defined above
+            # 3. "type": "array" where the allowed types of the values in the array are defined in the "items" list
+            # 4. "type": ["string", "null"] where type is an array of multiple allowed types
+            golang_type = ""
+            json_type = ""
+            if "type" in prop_val:
+
+                # Case 1, 2, 3
+                if type(prop_val["type"]) is str:
+                    json_type = prop_val["type"]
+                # Case 4
+                else:
+                    # Iterate over types and choose the first non-"null" type
+                    for v_type in prop_val["type"]:
+                        if v_type != "null":
+                            json_type = v_type
+
+                if json_type in PRIMITIVES:
+                    golang_type = PRIMITIVES[json_type]
+                elif json_type in REDFISH_TYPES:
+                    golang_type = REDFISH_TYPES[json_type]
+                elif json_type == "array":
+                    golang_type = "[]" + self.type_of_items(prop_val["items"])
+                elif json_type == "object":
+                    golang_type = "map[string]interface{}"
+
+            # Custom object type, need to get reference
+            else:
+                reference = ""
+                if "anyOf" in prop_val:
+                    reference = prop_val["anyOf"][0]["$ref"]
+                elif "$ref" in prop_val:
+                    reference = prop_val["$ref"]
+
+                # Parse reference
+                ending = reference.split("/")[-1]
+                if ending in REDFISH_TYPES:
+                    golang_type = REDFISH_TYPES[ending]
+                elif "autoExpand" in prop_val or "http" not in reference:
+                    golang_type = ending
+                else:
+                    golang_type = "map[string]interface{}"
+
+            print(f"Golang type for {prop_key}: {golang_type}")
+            if is_required:
+                f.write("\t%s %s `json:\"%s\"`\n\n" % (variable, golang_type, prop_key))
+            else:
+                f.write("\t%s %s `json:\"%s,omitempty\"`\n\n" % (variable, golang_type, prop_key))
+
+        except Exception as e:
+            print(f"Failed while processing property {prop_key}")
+            raise e
+
+    def type_of_items(self, items):
+        """Processes the "items" object, which comes in 3 flavors:
+            1. "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+
+            2. "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/RoleMapping"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+
+            3. "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/Zone.json#/definitions/Zone"
+                    },
+        """
+        if "anyOf" in items:
+            json_type = items["anyOf"][0]["$ref"].split("/")[-1]
+        elif "$ref" in items:
+            json_type = items["$ref"].split("/")[-1]
+        else:
+            json_type = items["type"][0]
+
+        if json_type in REDFISH_TYPES:
+            return REDFISH_TYPES[json_type]
+        elif json_type in PRIMITIVES:
+            return PRIMITIVES[json_type]
+        else:
+            return json_type
+
 
 
 class RedfishGenerator(Generator):

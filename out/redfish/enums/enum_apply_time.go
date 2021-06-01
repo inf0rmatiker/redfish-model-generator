@@ -18,10 +18,10 @@ const (
 	// Apply on a reset.
 	ApplyTime_ON_RESET ApplyTime = "OnReset"
 
-	// Apply during a maintenance window as specified by an administrator.
+	// Apply during an administrator-specified maintenance window.
 	ApplyTime_AT_MAINTENANCE_WINDOW_START ApplyTime = "AtMaintenanceWindowStart"
 
-	// Apply after a reset but within maintenance window as specified by an adminstrator.
+	// Apply after a reset but within an administrator-specified maintenance window.
 	ApplyTime_IN_MAINTENANCE_WINDOW_ON_RESET ApplyTime = "InMaintenanceWindowOnReset"
 
 )
